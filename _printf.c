@@ -10,6 +10,7 @@
 
 int _printf(const char *format, ...)
 {
+<<<<<<< HEAD
 	int count;
 	va_list args;
 
@@ -26,4 +27,6 @@ int _printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+
+
 }
