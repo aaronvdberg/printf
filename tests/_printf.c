@@ -7,7 +7,6 @@
 */
 int _printf(const char *format, ...)
 {
-    int i;
     int count = 0;
     va_list ap;
     va_start(ap, format);
@@ -18,15 +17,14 @@ int _printf(const char *format, ...)
  *
  *
  */
-
-while (format && *format != '\0')
-  {
+    while (format && *format != '\0')
+    {
         if (*format == '%')
         {
             switch (*(++format))
             {
             case 'c':
-                count += write(1, &va_arg(ap, int), 1);
+                count += print_char(va_arg(ap, int));
                 break;
             case 's':
                 count += write(1, va_arg(ap, char *), 1);
@@ -34,13 +32,14 @@ while (format && *format != '\0')
             case '%':
                 count += write(1, "%", 1);
                 break;
-	    case 'd':
-	    case 'i':
-	         count += write_integer(va_arg(ap, int));
-		 break;
-	    case 'b':
-	    	 count += write_binary(va_arg(ap, unsigned int));
-	    default:
+            case 'd':
+            case 'i':
+                count += print_func(va_arg(ap, int));
+                break;
+            case 'b':
+                count += print_func(va_arg(ap, unsigned int));
+                break;
+            default:
                 count += write(1, "%", 1);
                 break;
             }
@@ -51,9 +50,7 @@ while (format && *format != '\0')
         }
 
         ++format;
-    }
+    }    
 va_end(ap);
 return (count);
 }
-
-
