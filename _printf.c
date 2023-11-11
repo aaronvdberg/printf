@@ -9,18 +9,20 @@
 
 int _printf(const char *format, ...)
 {
-	int length;
+	int count;
 	va_list args;
 
-	chang_e f_list[] = {
-		{"%", print_percent},
-		{"c", print_char},
-		{"s", print_string},
-	};
-	if (format == NULL)
-		return (-1);
 	va_start(args, format);
-	length = format_reciever(format, f_list, args);
+	while (*format != '\0')
+	{
+		if (*format == '%')
+			count += print_format(*(++format), args);
+		else
+		{
+			count += write(1, format, 1);
+			++format;
+		}
+	}
 	va_end(args);
-	return (length);
+	return (count);
 }
