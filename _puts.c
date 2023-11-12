@@ -5,7 +5,8 @@
  * @str: The string to be printed.
  *
  * Return: The number of characters printed.
- */
+*/
+
 int _puts(const char *str)
 {
 	int count = 0;

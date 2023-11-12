@@ -1,6 +1,4 @@
 #include "main.h"
-
-
 /**
  * print_str - Print a string to standard output
  * @ap 
