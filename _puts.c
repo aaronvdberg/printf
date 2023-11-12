@@ -17,5 +17,5 @@ int _puts(const char *str)
 		count++;
 	}
 
-	return count;
+	return (count);
 }
