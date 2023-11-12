@@ -5,7 +5,11 @@
  * Return: prints char
 */
 
-int print_char(int c)
+int print_char(va_list val)
 {
-	return (write(1, &c, 1));
+	char ch;
+
+	ch = va_arg(val, int);
+	_putchar(ch);
+	return (1);
 }
