@@ -1,19 +1,30 @@
 #include "main.h"
+
+
 /**
- * print_str - function that prints string
- * @str: string
- * Return: count
-*/
+ * print_str - Print a string to standard output
+ * @ap 
+ *
+ */
 
-int print_str(char *str)
+
+int print_str (va_list ap)
 {
-	int count = 0;
 
-	while (*str != '\0')
-	{
-		print_char((int)*str);
-		++count;
-		++str;
-	}
-	return (count);
+int i;
+char *str;
+
+str = va_arg(ap, char *);
+if (str == NULL)
+{
+str = ("Nothing entered");
+return (_puts(str));
+}
+
+for (i = 0; str[i]; i++)
+{
+
+_putchar(str[i]);
+}
+return i;
 }

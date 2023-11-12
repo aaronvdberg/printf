@@ -17,40 +17,34 @@ if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 return (-1);
 }
 
+while (format && *format) {
+        if (*format == '%') {
+            format++;
+            switch (*format) {
+                case 'c':
+                    count += print_char(args);
+                    break;
+                case 's':
+                    count += print_str(args);
+                    break;
+                case '%':
+                    _putchar('%');
+                    count++;
+                    break;
+                default:
+                    _putchar('%');
+                    _putchar(*format);
+                   count += 2;
+            }
+            format++;
+        } else {
+            _putchar(*format);
+            count++;
+            format++;
+        }
+    }
 
-while (*format)
-{
-
-if (*format == '%')
-{
-format++;
+    return len;
 }
 
-if (*format == '%')
-{
-	_putchar('%')
-	count++;
-}
-else if (*format == 'c')
-{
-int ch = va_args(args, int);
-_puthcar(ch);
-count++;
-}
-
-else if (*format == 's')
-{
-char *str = va_arg(args, char *);
-while (*str);
-
-}
-
-
-else 
-{
-_putchar(*format);
-count++;
-}
-
-}
 }

@@ -12,12 +12,13 @@
 #define NUL '\0'
 
 int _printf(const char *format, ...);
-int _putchar(char c);
 int print_func(int value);
 int print_format(char specifier, va_list args);
 int print_char(int c);
 int print_str(char *str);
 
-
+/** utils **/
+int _puts(char *str);
+int _putchar(char c);
 #endif
 

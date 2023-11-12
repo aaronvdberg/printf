@@ -2,8 +2,8 @@
 
 
 /**
- *
- *
+ * print_str - Print a string to standard output
+ * @ap 
  *
  */
 
@@ -15,16 +15,16 @@ int i;
 char *str;
 
 str = va_arg(ap, char *);
-if (string == null)
+if (str == NULL)
 {
-string = ("Nothing entered");
+str = ("Nothing entered");
 return (_puts(str));
 }
 
-for (i = 0; string[i]; i++)
+for (i = 0; str[i]; i++)
 {
 
-_putchar(string[i])
+_putchar(str[i]);
 }
 return i;
 }
