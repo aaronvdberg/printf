@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_char - function that prints character
- * @c: character
+ * @ap: read in
  * Return: prints char
 */
 

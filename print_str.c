@@ -1,8 +1,10 @@
 #include "main.h"
 
 /**
- * print_str - Print a string to standard output
- * @ap
+ * print_str - Entry point
+ * Description: prints a string
+ * Return: the string
+ * @ap: read in
 */
 
 int print_str(va_list ap)
