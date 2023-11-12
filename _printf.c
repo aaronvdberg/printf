@@ -17,7 +17,8 @@ if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 return (-1);
 }
 
-while (format && *format) {
+while (format && *format)
+{
         if (*format == '%') {
             format++;
             switch (*format) {
@@ -44,7 +45,5 @@ while (format && *format) {
         }
     }
 
-    return len;
-}
-
+    return count;
 }
