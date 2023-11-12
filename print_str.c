@@ -9,8 +9,8 @@ int print_str(va_list ap)
 {
 int i;
 char *str;
-str = va_arg(val, char *);
-if (st == NULL)
+str = va_arg(ap, char *);
+if (str == NULL)
 {
 str = "(nill)";
 return (_puts(str));
