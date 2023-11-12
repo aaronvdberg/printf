@@ -8,13 +8,13 @@
  */
 
 
-int print_str (va_list val)
+int print_str (va_list ap)
 {
 
 int i;
 char *str;
 
-
+str = va_arg(ap, char *);
 if (string == null)
 {
 string = ("Nothing entered");
