@@ -17,7 +17,7 @@ int print_func(int value);
 int print_format(char specifier, va_list args);
 int print_char(va_list ap);
 int print_str(va_list ap);
-
+int print_int(va_list ap);
 /** utils **/
 int _puts(char *str);
 int _putchar(char c);
