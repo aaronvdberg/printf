@@ -23,10 +23,10 @@ while (format && *format)
             format++;
             switch (*format) {
                 case 'c':
-                    count += print_char(args);
-                    break;
+                    count += print_char(ap);
+		break;
                 case 's':
-                    count += print_str(args);
+                    count += print_str(ap);
                     break;
                 case '%':
                     _putchar('%');
@@ -44,6 +44,6 @@ while (format && *format)
             format++;
         }
     }
-
-    return count;
+    va_end(ap);
+    return (count);
 }
