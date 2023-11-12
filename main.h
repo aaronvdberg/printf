@@ -8,6 +8,7 @@
 #include <limits.h>
 
 #define UNUSED(x) (void)(x)
+
 #define NULL_STRING "(null)"
 #define NUL '\0'
 
