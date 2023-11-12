@@ -8,14 +8,14 @@
  */
 int _puts(const char *str)
 {
-    int count = 0;
+	int count = 0;
 
-    while (*str)
-    {
-        write(1, str, 1);
-        str++;
-        count++;
-    }
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+		count++;
+	}
 
-    return count;
+	return count;
 }
