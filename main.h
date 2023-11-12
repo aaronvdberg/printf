@@ -18,6 +18,8 @@ int print_format(char specifier, va_list args);
 int print_char(va_list ap);
 int print_str(va_list ap);
 int print_int(va_list ap);
+int print_binary(va_list ap);
+int print_positive_binary(unsigned int num);
 /** utils **/
 int _puts(char *str);
 int _putchar(char c);
