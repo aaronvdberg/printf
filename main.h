@@ -28,6 +28,7 @@ int print_hex_upper(va_list ap);
 int print_octal(va_list ap);
 int print_positive_octal(unsigned int num);
 int print_custom_str(va_list ap);
+int print_pointer(va_list ap);
 /** utils **/
 int _puts(char *str);
 int _putchar(char c);

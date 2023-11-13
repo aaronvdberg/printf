@@ -55,6 +55,9 @@ while (format && *format)
 		case 'S':
     	count += print_custom_str(ap);
     	break;
+		case 'p':
+    	count += print_pointer(ap);
+    	break;
 		default:
 		_putchar('%');
 		_putchar(*format);
