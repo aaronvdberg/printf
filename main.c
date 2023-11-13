@@ -1,12 +1,11 @@
 #include "main.h"
 
-
 /**
- * print_S - Entry point
+ * main - Entry point
  *
  * Return: Always 0
  */
-int print_S(void)
+int main(void)
 {
     _printf("%S\n", "Best\nSchool");
     return (0);
