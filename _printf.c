@@ -36,6 +36,8 @@ while (format && *format)
 		case 'b':
 		count += print_binary(ap);
 		break;
+		case 'u':
+		count += print_unsigned_int(ap);
 		case '%':
 		_putchar('%');
 		count++;
