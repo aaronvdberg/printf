@@ -37,7 +37,17 @@ while (format && *format)
 		count += print_binary(ap);
 		break;
 		case 'u':
-		count += print_unsigned_int(ap);
+        count += print_unsigned(ap);
+        break;
+    	case 'o':
+        count += print_octal(ap);
+        break;
+    	case 'x':
+        count += print_hex_lower(ap);
+        break;
+    	case 'X':
+        count += print_hex_upper(ap);
+        break;
 		case '%':
 		_putchar('%');
 		count++;

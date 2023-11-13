@@ -20,6 +20,13 @@ int print_str(va_list ap);
 int print_int(va_list ap);
 int print_binary(va_list ap);
 int print_positive_binary(unsigned int num);
+int print_unsigned(va_list ap);
+int print_positive_int(unsigned int num);
+int print_hex_lower(va_list ap);
+int print_positive_hex(unsigned int num, int uppercase);
+int print_hex_upper(va_list ap);
+int print_octal(va_list ap);
+int print_positive_octal(unsigned int num);
 /** utils **/
 int _puts(char *str);
 int _putchar(char c);
