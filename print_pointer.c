@@ -4,6 +4,7 @@
  * @ap: argument list
  * Return: number of characters printed
  */
+
 int print_pointer(va_list ap)
 {
 	void *ptr = va_arg(ap, void*);
