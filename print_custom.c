@@ -28,6 +28,11 @@ int print_custom_str(va_list ap)
 			_putchar('\\');
 			_putchar('x');
 			count += 2;
+		if (str[i] < 16)
+        		{
+            		_putchar('0');
+           		 count++;
+       			 }	
 			count += print_positive_hex((unsigned char)(str[i]), 1);
 		}
 	}
