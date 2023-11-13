@@ -8,12 +8,10 @@
 
 int print_pointer(va_list ap)
 {
-	void *ptr = va_arg(ap, void*);
 	int count = 0;
-
-	_putchar('0');
-	_putchar('x');
-	count += 2;
-	count += print_positive_hex((uintptr_t)ptr, 1);
+	unsigned long ptr_ad = (unsigned long)va_arg(ap, void *);
+	count += _putchar('0');
+	count += _putchar('x');
+	count += print_positive_hex(ptr_ad, sizeof(void *) * 2);
 	return (count);
 }
