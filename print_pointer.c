@@ -1,20 +1,25 @@
 #include "main.h"
 
 /**
- * print_pointer - A function to print pointer address.
- * @ap: va_list that contains the pointer argument.
- * Return: Number of characters printed.
+ * print_pointer - a function to print a pointer address
+ * @ap: the va_list that contains the pointer argument
+ * Return: number of characters printed
  */
 int print_pointer(va_list ap)
 {
-	void *ptr = va_arg(ap, void*);
-	unsigned long int address = (unsigned long int)ptr;
+	void *ptr = va_arg(ap, void *);
+	char *hex_prefix = "0x";
 	int count = 0;
 
-	count += _putchar('0');
-	count += _putchar('x');
-
-	count += _printf("%016lx", address);
+	if (ptr == NULL)
+	{
+		count += _printf("(nil)");
+	}
+	else
+	{
+		count += _printf("%s", hex_prefix);
+		count += print_hex_lower_helper((unsigned long)ptr, 1);
+	}
 
 	return (count);
 }
