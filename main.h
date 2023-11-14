@@ -30,6 +30,7 @@ int print_positive_octal(unsigned int num);
 int print_custom_str(va_list ap);
 int print_pointer(va_list ap);
 int print_hex_lower_helper(unsigned long n, int count);
+int print_rot13(char *str);
 /** utils **/
 int _puts(char *str);
 int _putchar(char c);
