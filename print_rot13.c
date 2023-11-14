@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * print_rot13 - A function to print the rot13'ed string.
- * @str: The input string.
- * Return: Number of characters printed.
- */
+ * print_rot13 - a function to print the rot13'ed string
+ * @str: the input string
+ * Return: number of characters printed
+*/
+
 int print_rot13(char *str)
 {
 	int count = 0;
