@@ -12,6 +12,14 @@
 #define NULL_STRING "(null)"
 #define NUL '\0'
 
+/** flags **/
+
+#define PLUS 2
+#define HASH 8
+#define SPACE 16
+
+/** functions **/
+
 int _printf(const char *format, ...);
 int print_func(int value);
 int print_format(char specifier, va_list args);
@@ -30,6 +38,7 @@ int print_positive_octal(unsigned int num);
 int print_custom_str(va_list ap);
 int print_pointer(va_list ap);
 int print_hex_lower_helper(unsigned long n, int count);
+
 /** utils **/
 int _puts(const char *str);
 int _putchar(char c);
