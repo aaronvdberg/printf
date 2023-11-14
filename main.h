@@ -39,6 +39,7 @@ int print_custom_str(va_list ap);
 int print_pointer(va_list ap);
 int print_hex_lower_helper(unsigned long n, int count);
 int print_rot13(char *str);
+int get_flags(const char *format, int *i);
 /** utils **/
 int _puts(const char *str);
 int _putchar(char c);
