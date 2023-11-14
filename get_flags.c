@@ -3,8 +3,8 @@
 int get_flags(const char *format, int *f)
 {
     const char FLAGS_CH[] = {'+', ' ', '#', '\0'};
-    const int FLAGS_ARR[] = {F_PLUS, F_SPACE, F_HASH};
-
+    const int FLAGS_ARR[] = {PLUS, SPACE, HASH};
+    int j;
     int flags = 0;
     int curr_i = *f + 1;
 
@@ -17,7 +17,7 @@ int get_flags(const char *format, int *f)
             case '+':
             case '#':
             case ' ':
-                for (int j = 0; FLAGS_CH[j] != '\0'; j++) 
+                for (j = 0; FLAGS_CH[j] != '\0'; j++) 
                 {
                     if (current_flag == FLAGS_CH[j]) {
                         flags |= FLAGS_ARR[j];
