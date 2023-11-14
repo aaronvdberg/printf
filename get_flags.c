@@ -1,12 +1,12 @@
 #include "main.h"
 
-int get_flags(const char *format, int *i)
+int get_flags(const char *format, int *f)
 {
     const char FLAGS_CH[] = {'+', ' ', '#', '\0'};
     const int FLAGS_ARR[] = {F_PLUS, F_SPACE, F_HASH};
 
     int flags = 0;
-    int curr_i = *i + 1;
+    int curr_i = *f + 1;
 
     while (format[curr_i] != '\0')
     {
@@ -33,7 +33,7 @@ int get_flags(const char *format, int *i)
         curr_i++;
     }
 
-    *i = curr_i - 1;
+    *f = curr_i - 1;
 
     return flags;
 }
