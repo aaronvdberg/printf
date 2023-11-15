@@ -1,7 +1,9 @@
 #include "main.h"
+
 /**
  * print_positive_int - prints positive int
  * @num: the positive int
+ * @flags: flags for formatting
  * Return: int
  */
 int print_positive_int(unsigned int num, int flags)
@@ -13,6 +15,7 @@ int print_positive_int(unsigned int num, int flags)
     count++;
     return (count);
 }
+
 /**
  * print_int - Print an int to stdout
  * @ap: read in
@@ -24,20 +27,20 @@ int print_int(va_list ap, int flags)
     int num = va_arg(ap, int);
     int count = 0;
 
-    if (flags & PLUS) {
-        if (num >= 0) {
-            _putchar('+');
-            count++;
-        }
+    if (flags & PLUS && num >= 0) {
+        _putchar('+');
+        count++;
+    } else if (flags & SPACE && num >= 0) {
+        _putchar(' ');
+        count++;
     }
 
-    if (flags & SPACE) {
-        if (num >= 0 && !(flags & PLUS)) {
-            _putchar(' ');
-            count++;
-        }
-        }
-
+    if (num == 0) {
+        _putchar('0');
+        count++;
+    } else {
+        count += print_positive_int((num < 0) ? -num : num, flags);
+    }
 
     return count;
 }
