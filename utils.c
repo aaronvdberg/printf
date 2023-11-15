@@ -23,14 +23,36 @@ int _putchar(char c)
 
 int _puts(const char *str)
 {
-    int count = 0;
+	int count = 0;
 
-    while (*str)
-    {
-        write(1, str, 1);
-        str++;
-        count++;
-    }
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+		count++;
+	}
 
-    return count;
+	return (count);
+}
+
+#include "main.h"
+
+/**
+ * _strlen - count length of string
+ *
+ * @s: pointer to char
+ *
+ * Return: return the length
+ */
+
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
 }

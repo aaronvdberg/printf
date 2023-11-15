@@ -1,8 +1,5 @@
 #include "main.h"
-<<<<<<< Updated upstream
 #include <stdint.h>
-=======
->>>>>>> Stashed changes
 /**
  * print_pointer - A function to print a pointer address.
  * @ap: The va_list that contains the pointer argument.
