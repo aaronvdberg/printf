@@ -37,8 +37,9 @@ int print_positive_octal(unsigned int num);
 int print_custom_str(va_list ap);
 int print_pointer(va_list ap);
 int print_hex_lower_helper(unsigned long n, int count);
+int print_reverse(va_list args);
 int print_rot13(char *str);
-
+int _strlen(char *s);
 /**flags*/
 void set_flag(int *flags, char current_flag);
 int get_flags(const char *format, int *f);

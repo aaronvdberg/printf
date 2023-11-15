@@ -57,8 +57,11 @@ while (format && *format)
     	count += print_custom_str(ap);
     	break;
 		case 'p':
-    	count += print_pointer(ap);
+    	count += print_pointer(va_arg(ap, void *));
     	break;
+		case 'r':
+        count += print_reverse(ap);
+        break;
 		case 'R':
         count += print_rot13(va_arg(ap, char *));
         break;

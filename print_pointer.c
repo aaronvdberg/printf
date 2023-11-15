@@ -1,9 +1,12 @@
 #include "main.h"
+<<<<<<< Updated upstream
 #include <stdint.h>
+=======
+>>>>>>> Stashed changes
 /**
- * print_pointer - a function to print a pointer address
- * @ap: the va_list that contains the pointer argument
- * Return: number of characters printed
+ * print_pointer - A function to print a pointer address.
+ * @ap: The va_list that contains the pointer argument.
+ * Return: Number of characters printed.
  */
 
 int print_pointer(va_list ap)
@@ -14,11 +17,11 @@ int print_pointer(va_list ap)
 
 	if (ptr == NULL)
 	{
-		count += _printf("(nil)");
+		count += _puts("(nil)");
 	}
-	else
+	else if (ptr != NULL)
 	{
-		count += _printf("%s", hex_prefix);
+		count += _puts(hex_prefix);
 		count += print_hex_lower_helper((unsigned long)ptr, 1);
 	}
 
