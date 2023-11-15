@@ -37,3 +37,20 @@ int get_flags(const char *format, int *f)
 
     return flags;
 }
+
+
+void set_flag(int *flags, char current_flag)
+{
+    switch (current_flag) 
+    {
+        case '+':
+            *flags |= PLUS;
+            break;
+        case '#':
+            *flags |= HASH;
+            break;
+        case ' ':
+            *flags |= SPACE;
+            break;
+    }
+}
