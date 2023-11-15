@@ -27,10 +27,14 @@ int print_int(va_list ap, int flags)
     int num = va_arg(ap, int);
     int count = 0;
 
-    if (flags & PLUS && num >= 0) {
+    if (num < 0) {
+        _putchar('-');
+        count++;
+        num = -num;
+    } else if (flags & PLUS) {
         _putchar('+');
         count++;
-    } else if (flags & SPACE && num >= 0) {
+    } else if (flags & SPACE) {
         _putchar(' ');
         count++;
     }
@@ -39,7 +43,7 @@ int print_int(va_list ap, int flags)
         _putchar('0');
         count++;
     } else {
-        count += print_positive_int((num < 0) ? -num : num, flags);
+        count += print_positive_int(num, flags);
     }
 
     return count;
