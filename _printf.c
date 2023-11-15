@@ -8,6 +8,7 @@
 int _printf(const char *format, ...)
 {
 int count = 0;
+int flags = 0;
 va_list ap;
 va_start(ap, format);
 
@@ -31,22 +32,22 @@ while (format && *format)
 		break;
 		case 'd':
                 case 'i':
-                count += print_int(ap);
+                count += print_int(ap, flags);
                 break;
 		case 'b':
 		count += print_binary(ap);
 		break;
 		case 'u':
-        count += print_unsigned(ap);
+        count += print_unsigned(ap, flags);
         break;
     	case 'o':
-        count += print_octal(ap);
+        count += print_octal(ap, flags);
         break;
     	case 'x':
-        count += print_hex_lower(ap);
+        count += print_hex_lower(ap, flags);
         break;
     	case 'X':
-        count += print_hex_upper(ap);
+        count += print_hex_upper(ap, flags);
         break;
 		case '%':
 		_putchar('%');
