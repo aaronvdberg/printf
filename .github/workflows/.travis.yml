@@ -1,1 +1,6 @@
+language: c
+
+script:
+  - gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
+  - ./printf
 
