@@ -1,6 +1,13 @@
 language: c
 
+before_script:
+  - git clone https://github.com/holbertonschool/Betty.git
+  - cd Betty
+  - sudo ./install.sh
+  - cd ..
+
 script:
+  - betty-doc *.c
+  - betty-style *.c
   - gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
   - ./printf
-
