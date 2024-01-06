@@ -1,0 +1,7 @@
+stages:
+  - build
+
+build:
+  script:
+    - gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
+    - ./printf
