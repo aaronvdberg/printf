@@ -1,0 +1,16 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Build and Test
+      run: |
+        gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o printf
+        ./printf
