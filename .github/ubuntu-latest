@@ -1,0 +1,42 @@
+name: Build-and-Test-GCC-Linux
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Debug, Release]
+        std: [20]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install GCC and dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcc g++
+        sudo apt-get install -y libopus-dev libsodium-dev libssl-dev
+
+    - name: Configure CMake
+      run: |
+        mkdir build
+        cd build
+        cmake .. -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_STANDARD=${{matrix.std}}
+      
+    - name: Build the Test
+      run: |
+        cmake --build . --config=${{matrix.build_type}}
+
+    - name: Run the Test
+      run: |
+        cd build/Tests
+        chmod u+x DiscordCoreAPITest
+        ./DiscordCoreAPITest
